@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Códigos de línea</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e2f;
+            color: #e0e0e0;
+        }
+        header {
+            background: #6200ea;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1500px; /* Adjusted width for larger container */
+            margin: 2rem auto;
+            padding: 2rem; /* Increased padding for better spacing */
+            background: #2d2d3f;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        h1, h2 {
+            color: #ffcc00;
+        }
+        nav {
+            margin: 1rem 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            color: #00e676;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+         nav img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .image-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-wrapper img {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Códigos de línea</h1>
+    </header>
+
+    <div class="container">
+        <h2>3.4: Códigos de línea</h2>
+        <p>Los códigos de línea son técnicas utilizadas para representar datos digitales en forma de señales analógicas, facilitando su transmisión a través de medios físicos. Estas técnicas son fundamentales en telecomunicaciones, ya que permiten la codificación eficiente de información y ayudan a minimizar errores durante la transmisión.</p>
+        <h3>Código Manchester</h3>
+        <p>Este código combina la información de datos y el reloj en una sola señal. Cada bit se representa mediante un cambio en la señal: un bit "0" puede ser representado por una transición de alto a bajo, mientras que un bit "1" se representa con una transición de bajo a alto. Esto proporciona sincronización y es menos susceptible al ruido.</p>
+
+        <h4>Ventajas</h4>
+        <ul>
+            <li>Proporciona sincronización entre el transmisor y el receptor al incluir transiciones en la señal.</li>
+            <li>Es menos susceptible al ruido, lo que mejora la calidad de la transmisión.</li>
+        </ul>
+         <h4>Desventajas</h4>
+        <ul>
+            <li>Requiere más ancho de banda que otros códigos, ya que cada bit tiene al menos una transición.</li>
+            <li>Puede ser más complejo de implementar en hardware.</li>
+        </ul>
+        <h4>Aplicaciones</h4>
+        <ul>
+            <li>Utilizado en redes Ethernet y en comunicaciones donde se requiere sincronización precisa.</li>
+        </ul>
+        <div class="image-wrapper">
+            <img src="imagen5.png" alt="Sección Icono">
+        </div>
+        <h3>Código NRZ (Non-Return to Zero)</h3>
+        <p>En este esquema, los bits "1" y "0" se representan por diferentes niveles de voltaje, donde "1" puede ser un voltaje alto y "0" un voltaje bajo. Sin embargo, NRZ no tiene cambios en la señal para representar el tiempo, lo que puede dificultar la sincronización en largas secuencias de bits iguales.</p>
+        <h4>Ventajas</h4>
+        <ul>
+            <li>Sencillo de implementar y requiere menos ancho de banda en comparación con otros códigos.</li>
+            <li>Permite una representación directa de los bits.</li>
+        </ul>
+         <h4>Desventajas</h4>
+        <ul>
+            <li>Puede causar problemas de sincronización en largas secuencias de bits iguales (por ejemplo, "0000").</li>
+            <li>Menos resistente al ruido, lo que puede llevar a errores en la interpretación de datos.</li>
+        </ul>
+        <h4>Aplicaciones</h4>
+        <ul>
+            <li>Comúnmente utilizado en sistemas de comunicación serial y en algunas aplicaciones de almacenamiento digital.</li>
+        </ul>
+        <div class="image-wrapper">
+            <img src="imagen6.png" alt="Sección Icono">
+        </div>
+       <h3>Código RZ (Return to Zero)</h3>
+       <p> Similar al NRZ, pero aquí el voltaje regresa a cero durante la mitad del periodo del bit. Esto ayuda a mejorar la sincronización, aunque puede requerir más ancho de banda.</p>
+       <h4>Ventajas</h4>
+            <ul>
+            <li>Mejora la sincronización al regresar a cero durante la mitad del periodo del bit.</li>
+            <li>Reduce el riesgo de confusión entre bits consecutivos.</li>
+        </ul>
+        <h4>Desventajas</h4>
+        <ul>
+            <li>Requiere más ancho de banda que NRZ debido a las transiciones adicionales.</li>
+            <li>Menos eficiente en términos de utilización del espectro.</li>
+        </ul>
+        <h4>Aplicaciones</h4>
+        <ul>
+            <li>Utilizado en sistemas donde la sincronización es crítica, como en algunos protocolos de comunicación.</li>
+        </ul>
+        <div class="image-wrapper">
+            <img src="imagen7.png" alt="Sección Icono">
+        </div>
+        <h3>Código 4B/5B</h3>
+       <p> Este método convierte cada grupo de 4 bits en un grupo de 5 bits para garantizar que siempre haya suficientes transiciones en la señal para mantener la sincronización. Se utiliza comúnmente en Ethernet.</p>
+       <h4>Ventajas</h4>
+            <ul>
+            <li>Asegura suficientes transiciones para mantener la sincronización.</li>
+            <li>Reduce el riesgo de confusión entre bits consecutivos.</li>
+        </ul>
+        <h4>Desventajas</h4>
+        <ul>
+            <li>Aumenta el tamaño del dato transmitido, lo que puede requerir más ancho de banda.</li>
+            <li>La complejidad en la codificación y decodificación puede aumentar el costo del hardware.</li>
+        </ul>
+        <h4>Aplicaciones</h4>
+        <ul>
+            <li>Usado en redes Ethernet y protocolos como FDDI (Fiber Distributed Data Interface).</li>
+        </ul>
+        <div class="image-wrapper">
+            <img src="imagen8.png" alt="Sección Icono">
+        </div>
+        <h3>Código HDB3 (High Density Bipolar 3 Zeros)</h3>
+       <p> Este código se utiliza para transmitir datos a través de líneas telefónicas y es útil para evitar largas secuencias de ceros. Cada grupo de tres ceros se reemplaza por un bit bipolar, lo que ayuda a mantener el equilibrio y la sincronización.</p>
+       <h4>Ventajas</h4>
+            <ul>
+            <li>Previene largas secuencias de ceros, lo que mejora la sincronización.</li>
+            <li>Mantiene un equilibrio entre los niveles positivos y negativos para evitar desplazamientos DC.</li>
+        </ul>
+        <h4>Desventajas</h4>
+        <ul>
+            <li>Puede ser más complejo de implementar y requerir un procesamiento adicional.</li>
+            <li>La decodificación puede ser más complicada debido a la naturaleza bipolar.</li>
+        </ul>
+        <h4>Aplicaciones</h4>
+        <ul>
+            <li>Comúnmente utilizado en líneas telefónicas digitales y sistemas de transmisión de datos.</li>
+        </ul>
+        <div class="image-wrapper">
+            <img src="imagen2.gif" alt="Sección Icono">
+        </div>
+         <h3>Código Bipolar</h3>
+       <p> Utiliza tres niveles de voltaje: positivo, negativo y cero. Un bit "1" se representa alternando entre los niveles positivo y negativo, mientras que un bit "0" se representa como cero. Esto permite una buena sincronización y reduce el efecto DC.</p>
+       <h4>Ventajas</h4>
+            <ul>
+            <li>Reduce el efecto DC y permite una buena sincronización mediante alternancia entre niveles positivos y negativos.</li>
+            <li>Menos susceptible al ruido en comparación con otros códigos.</li>
+        </ul>
+        <h4>Desventajas</h4>
+        <ul>
+            <li>Requiere un mayor procesamiento para generar y decodificar las señales.</li>
+            <li>Puede ser complicado manejar si hay errores en la transmisión.</li>
+        </ul>
+        <h4>Aplicaciones</h4>
+        <ul>
+            <li>Utilizado en sistemas telefónicos digitales y redes donde se requiere alta calidad de señal.</li>
+        </ul>
+        <div class="image-wrapper">
+            <img src="imagen4.jpeg" alt="Sección Icono">
+        </div>
+        <nav>
+
+            <a href="pagina2.html">Anterior</a>
+            <a href="index.html">Inicio</a>
+            <a href="pagina4.html">Siguiente</a>
+        </nav>
+        <h4>Abraham Santiago Mendoza</h4>
+    </div>
+</body>
+</html>

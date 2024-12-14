@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP/IP</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e2f;
+            color: #e0e0e0;
+        }
+        header {
+            background: #6200ea;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1500px; /* Adjusted width for larger container */
+            margin: 2rem auto;
+            padding: 2rem; /* Increased padding for better spacing */
+            background: #2d2d3f;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        h1, h2 {
+            color: #ffcc00;
+        }
+        nav {
+            margin: 1rem 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            color: #00e676;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+         nav img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .image-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-wrapper img {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Modelo TCP/IP</h1>
+    </header>
+ 
+    <div class="container">
+        <p>El modelo TCP/IP es considerado el estándar principal para la comunicación en redes informáticas. Su objetivo es definir el proceso necesario para que los datos generados en el origen lleguen de manera correcta y comprensible al destino. Para ello, utiliza diversos protocolos, cada uno con una función específica, que se explicarán a lo largo del capítulo.
+        Una forma de entenderlo mejor es compararlo con la telefonía. Si en casa reemplazamos un teléfono antiguo por uno moderno, al conectarlo a la línea telefónica podremos realizar y recibir llamadas de la misma forma que con el anterior, sin necesidad de configuraciones especiales ni cambiar el cableado. Esto es posible porque ambos teléfonos usan los mismos protocolos de comunicación, que han sido definidos y aprobados para su aplicación global. Lo mismo ocurre con TCP/IP: cualquier dispositivo que lo utilice podrá comunicarse con otros que también lo empleen, sin importar el fabricante, modelo o ubicación.
+        Al igual que otros estándares de red, TCP/IP opera mediante capas, cada una con una función específica y los protocolos necesarios para permitir distintos tipos de comunicación. Estas capas son las siguientes:</p>
+        <div class="image-wrapper">
+            <img src="imagen12.png" alt="Sección Icono">
+        </div>
+        <h3>Capa de Aplicación</h3>
+        <p>La capa de aplicación es responsable de proporcionar los protocolos necesarios a los servicios o aplicaciones para que puedan iniciar el proceso de comunicación en red. Para entender mejor su funcionamiento, tomemos como ejemplo el intercambio de mensajes entre un cliente y un servidor web, y veamos cómo los datos son manipulados en cada capa antes de ser enviados al medio.
+        En este caso, el cliente inicia el proceso a través de un navegador, como Firefox, utilizando el protocolo HTTP en la capa de aplicación. ¿Qué sucede cuando un dispositivo quiere enviar una solicitud a un servidor web? En realidad, se generan varios mensajes definidos por el protocolo para que ambos sistemas se "comuniquen" correctamente y la interacción se realice con éxito. En el lado del cliente, se crean mensajes GET, y el servidor responde con un código (como el 200, que significa OK). Además, entra en juego otro protocolo, HTML, que define el formato de la página que se enviará.</p>
+        <div class="image-wrapper">
+            <img src="imagen12.jpg" alt="Sección Icono">
+        </div>
+        <h3>Capa de Transporte</h3>
+        <p>Una vez que la capa de aplicación ha generado los datos, estos son enviados a la capa de transporte, que ofrece diversas funciones, siendo una de ellas la identificación de la aplicación a la que se dirige la comunicación. Para ello, utiliza dos protocolos: TCP (Transmission Control Protocol) y UDP (User Datagram Protocol), los cuales se analizan en detalle en este capítulo.
+        Siguiendo con el ejemplo web, ¿qué sucedería si la solicitud enviada por el cliente no llega al servidor, o viceversa? ¿Cómo sabe un dispositivo que sus datos han sido recibidos por el destinatario? TCP/IP requiere un mecanismo que asegure la entrega confiable de datos de extremo a extremo. Este servicio es esencial para muchas aplicaciones de red, y es responsabilidad de la capa de transporte, particularmente del protocolo TCP, que se encarga de la recuperación de errores mediante el uso de paquetes de confirmación (ACK). El proceso es simple:
+        Cuando el origen utiliza TCP, por cada paquete enviado se espera una confirmación de recepción por parte del destinatario, que se realiza mediante un mensaje ACK. Si, después de un tiempo determinado, el origen no recibe dicho ACK, vuelve a enviar los datos.</p>
+        <div class="image-wrapper">
+            <img src="imagen13.jpg" alt="Sección Icono">
+        </div>
+        <h3>Capa de Internet</h3>
+        <p>La capa de Internet, que se basa principalmente en el protocolo IP, se encarga de añadir la información necesaria a los datos para asegurarse de que lleguen al destino correcto. Esta tarea se realiza mediante el uso de direcciones IP, que identifican a cada dispositivo en la red.
+        Es como si quisieras hacer una llamada telefónica pero no supieras el número de destino; sin él, sería imposible realizar la llamada. De manera similar, los datos necesitan una dirección para garantizar que la comunicación se complete con éxito.
+        Siguiendo con el ejemplo anterior, supongamos que el cliente tiene la IP 10.10.10.10 y el servidor tiene la IP 20.20.20.20.</p>
+        <div class="image-wrapper">
+            <img src="imagen14.jpg" alt="Sección Icono">
+        </div>
+        <h3>Capa de Red</h3>
+        <p>Finalmente, la capa de acceso a la red se encarga de definir el procedimiento y el hardware necesario para que los datos sean transmitidos de un extremo a otro a través del medio físico disponible. Esta capa utiliza varios protocolos, que varían según el tipo de red y las conexiones; por ejemplo, en redes LAN se suele emplear Ethernet, mientras que en redes WAN se utilizan protocolos como PPP o HDLC, entre otros.
+        Es la última capa por la que pasan los datos antes de ser enviados al medio, por lo que también se encarga de definir su formato final. Para ello, además de añadir una cabecera al inicio, también incorpora un tráiler al final de los datos.</p>
+        <div class="image-wrapper">
+            <img src="imagen13.png" alt="Sección Icono">
+        </div>
+
+        <nav>
+
+            <a href="pagina5.html">Anterior</a>
+            <a href="index.html">Inicio</a>
+            <a href="pilares_cloud.html">Siguiente</a>
+        </nav>
+        <h4>Abraham Santiago Mendoza</h4>
+    </div>
+</body>
+</html>
